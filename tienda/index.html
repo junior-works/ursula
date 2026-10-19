@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mi tienda · Úrsula Roig</title>
+<meta name="description" content="Lo que uso para entrenar, salir y estar en casa. Mi selección en Amazon, por categorías.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--coral:#9a5f43;--line:#e6d9c8;--tint:#f1e5d8;--star:#c48a2c}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1814;--card:#28211c;--ink:#f3ebe2;--muted:#bfae9f;--sea:#c98e6e;--coral:#e0a483;--line:#3a3029;--tint:#332a23;--star:#e0b25a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Poppins,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 56px}
+.top{display:flex;align-items:center;gap:12px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--muted);font-size:14px;padding:8px 0}
+.top img{width:40px;height:40px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--sea)}
+.hero{padding:18px 0 6px}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(30px,6vw,44px);margin:0;line-height:1.1}
+h1 em{color:var(--sea);font-style:italic}
+.lead{color:var(--muted);margin:8px 0 0;max-width:560px}
+/* category covers */
+.covers{display:flex;gap:10px;overflow-x:auto;padding:18px 0 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.covers::-webkit-scrollbar{display:none}
+.cover{flex:0 0 132px;aspect-ratio:4/5;position:relative;border-radius:14px;overflow:hidden;text-decoration:none;scroll-snap-align:start;border:2px solid transparent}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover span{position:absolute;inset:auto 0 0 0;padding:22px 8px 8px;color:#fff;font-weight:600;font-size:12.5px;text-align:center;background:linear-gradient(transparent,rgba(20,12,8,.72))}
+.cover[aria-current="true"]{border-color:var(--sea)}
+/* sticky chips */
+.chips{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 0;background:var(--bg);scrollbar-width:none;border-bottom:1px solid var(--line)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:500;white-space:nowrap}
+.chip[aria-current="true"]{background:var(--sea);border-color:var(--sea);color:#fff}
+/* sections */
+section{padding-top:28px;scroll-margin-top:56px}
+.sh{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.sh img{width:64px;height:80px;border-radius:12px;object-fit:cover;flex:none}
+h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:26px;margin:0;line-height:1.15}
+.sh p{margin:3px 0 0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:960px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* product card */
+.p{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease}
+.p:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(52,40,34,.10)}
+.p:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+.art{position:relative;aspect-ratio:5/4;background:var(--tint);display:grid;place-items:center;color:var(--sea)}
+.art svg{width:52%;height:52%}
+.art .pick{position:absolute;top:8px;left:8px;background:var(--card);color:var(--coral);font-size:11px;font-weight:600;padding:3px 8px;border-radius:999px}
+.body{display:flex;flex-direction:column;gap:4px;padding:11px 12px 12px;flex:1}
+.brand{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.name{font-weight:500;font-size:14.5px;line-height:1.3}
+.note{font-size:13px;color:var(--muted);line-height:1.4}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:auto;padding-top:6px;font-size:12.5px}
+.stars{color:var(--star);white-space:nowrap}.stars b{color:var(--ink);font-weight:500}.stars small{color:var(--muted)}
+.price{font-weight:600;font-size:15px;white-space:nowrap}
+.cta{display:block;text-align:center;margin:8px 12px 12px;padding:9px;border-radius:12px;background:var(--sea);color:#fff;font-weight:600;font-size:13.5px}
+.p:hover .cta{background:var(--coral)}
+.studio{margin-top:40px;display:flex;gap:14px;align-items:center;padding:16px;border-radius:18px;background:var(--card);border:1px solid var(--line);text-decoration:none}
+.studio img{width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none}
+.studio b{display:block;font-weight:600}.studio small{color:var(--muted)}
+footer{margin-top:28px;color:var(--muted);font-size:12.5px;text-align:center;display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.p{transition:none}}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a class="back" href="../">← Volver</a></div>
+<div class="hero">
+<h1>Mi <em>tienda</em></h1>
+<p class="lead">Lo que uso para entrenar, para el día a día y para salir. Todo con buenas valoraciones y fácil de conseguir 🤍</p>
+</div>
+<nav class="covers" id="covers" aria-label="Categorías"></nav>
+<nav class="chips" id="chips" aria-label="Ir a categoría"></nav>
+<main id="cats"></main>
+<a class="studio" href="https://www.instagram.com/ursulafitroig" target="_blank" rel="noopener"><img src="../avatar.jpg" alt=""><span><b>¿Y la moda de las tiendas de Palma?</b><small>Esa la desfilo en mi Instagram, con el nombre de cada tienda →</small></span></a>
+<footer>
+<p>Los enlaces son de afiliado: si compras, gano una pequeña comisión y a ti no te cuesta nada más. En calidad de Afiliada de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</p>
+<p>Precios y valoraciones orientativos (octubre 2026). El precio final es el que marca Amazon.</p>
+<p>© Úrsula Roig · Palma de Mallorca · Creadora virtual</p>
+</footer>
+</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-leggings" viewBox="0 0 48 48"><path d="M16 5h16l1.5 37h-7.5l-2-23-2 23h-7.5z"/><path d="M16 10h16"/></symbol>
+<symbol id="i-sportsbra" viewBox="0 0 48 48"><path d="M14 8l4 9M34 8l-4 9"/><path d="M9 17c5 0 8 6 15 6s10-6 15-6v13c-4 4-9 6-15 6S13 34 9 30z"/><path d="M9 30h30"/></symbol>
+<symbol id="i-shorts" viewBox="0 0 48 48"><path d="M12 12h24l3 22H28l-4-11-4 11H9z"/><path d="M12 16h24"/></symbol>
+<symbol id="i-jumpsuit" viewBox="0 0 48 48"><path d="M18 5h12l2 11-2 4 2 23h-6l-2-17-2 17h-6l2-23-2-4z"/><path d="M18 5l-6 9 3 3M30 5l6 9-3 3"/></symbol>
+<symbol id="i-duffel" viewBox="0 0 48 48"><rect x="7" y="18" width="34" height="20" rx="6"/><path d="M18 18c0-7 12-7 12 0M7 27h34"/></symbol>
+<symbol id="i-bottle" viewBox="0 0 48 48"><path d="M20 5h8v6l3 4v27a2 2 0 0 1-2 2H19a2 2 0 0 1-2-2V15l3-4z"/><path d="M17 23h14"/></symbol>
+<symbol id="i-band" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="17" ry="10"/><ellipse cx="24" cy="24" rx="11" ry="5"/></symbol>
+<symbol id="i-socks" viewBox="0 0 48 48"><path d="M15 5h11v19l8 6c3 2.5 1 8.5-4 7l-15-6z"/><path d="M15 11h11"/></symbol>
+<symbol id="i-mat" viewBox="0 0 48 48"><circle cx="14" cy="24" r="8"/><circle cx="14" cy="24" r="3"/><path d="M14 16h26v16H14"/></symbol>
+<symbol id="i-earbuds" viewBox="0 0 48 48"><circle cx="16" cy="17" r="6"/><path d="M16 23v16"/><circle cx="32" cy="17" r="6"/><path d="M32 23v16"/></symbol>
+<symbol id="i-sneaker" viewBox="0 0 48 48"><path d="M5 31l2-13 8 2 5 5 10 2c6 1 10 3 12 6v4H5z"/><path d="M5 35h37M17 22l2 3M21 21l2 3"/></symbol>
+<symbol id="i-jeans" viewBox="0 0 48 48"><path d="M14 5h20l2.5 37h-8.5l-4-24-4 24h-8.5z"/><path d="M14 11h20M24 11v7"/></symbol>
+<symbol id="i-sweater" viewBox="0 0 48 48"><path d="M17 7h14l9 7-3 9-5-3v22H16V20l-5 3-3-9z"/><path d="M20 7c1 3 7 3 8 0M16 38h16"/></symbol>
+<symbol id="i-tshirt" viewBox="0 0 48 48"><path d="M17 8h14l9 6-4 7-4-2v23H16V19l-4 2-4-7z"/><path d="M20 8c1 3 7 3 8 0"/></symbol>
+<symbol id="i-jacket" viewBox="0 0 48 48"><path d="M17 6h14l9 7-2 10-5-2v21H15V21l-5 2-2-10z"/><path d="M24 9v33M19 6l5 7 5-7M18 28h3M27 28h3"/></symbol>
+<symbol id="i-crossbag" viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="18" rx="4"/><path d="M13 22L33 5M10 29h28"/></symbol>
+<symbol id="i-sunglasses" viewBox="0 0 48 48"><circle cx="14" cy="26" r="7"/><circle cx="34" cy="26" r="7"/><path d="M21 26h6M7 24l-2-5M41 24l2-5"/></symbol>
+<symbol id="i-dress" viewBox="0 0 48 48"><path d="M19 5l1 9h8l1-9"/><path d="M20 14h8l8 28H12z"/><path d="M19 20h10"/></symbol>
+<symbol id="i-sequin" viewBox="0 0 48 48"><path d="M17 7l1 7h12l1-7"/><path d="M15 14h18v22H15z"/><circle cx="20" cy="20" r="1.2"/><circle cx="28" cy="20" r="1.2"/><circle cx="24" cy="25" r="1.2"/><circle cx="20" cy="30" r="1.2"/><circle cx="28" cy="30" r="1.2"/></symbol>
+<symbol id="i-skirt" viewBox="0 0 48 48"><path d="M16 11h16l6 27H10z"/><path d="M16 15h16M20 15l-2 23M28 15l2 23"/></symbol>
+<symbol id="i-body" viewBox="0 0 48 48"><path d="M15 6l3 9h12l3-9"/><path d="M15 15h18v13l-6 9h-6l-6-9z"/><path d="M14 6v9M34 6v9"/></symbol>
+<symbol id="i-heels" viewBox="0 0 48 48"><path d="M6 34c8 0 13-12 21-12 5 0 8 4 10 9v5h-7l-3-4-14 4z"/><path d="M37 36v7"/></symbol>
+<symbol id="i-clutch" viewBox="0 0 48 48"><rect x="7" y="17" width="34" height="19" rx="3"/><path d="M7 17l17 9 17-9"/><circle cx="24" cy="26" r="1.6"/></symbol>
+<symbol id="i-earrings" viewBox="0 0 48 48"><path d="M16 12v6M32 12v6"/><circle cx="16" cy="27" r="8"/><circle cx="32" cy="27" r="8"/></symbol>
+<symbol id="i-bra" viewBox="0 0 48 48"><path d="M13 7l2 12M35 7l-2 12"/><path d="M7 19c3 9 9 12 17 4 8 8 14 5 17-4"/><path d="M7 19v7h34v-7"/></symbol>
+<symbol id="i-briefs" viewBox="0 0 48 48"><path d="M8 14h32l-4 10c-4 4-7 8-8 12h-8c-1-4-4-8-8-12z"/><path d="M8 19h32"/></symbol>
+<symbol id="i-pajama" viewBox="0 0 48 48"><path d="M17 6h14l8 8-4 5-3-2v25H16V17l-3 2-4-5z"/><path d="M24 9v33M20 6l4 6 4-6"/><circle cx="24" cy="20" r="1"/><circle cx="24" cy="28" r="1"/></symbol>
+<symbol id="i-robe" viewBox="0 0 48 48"><path d="M16 5h16l7 7v31H9V12z"/><path d="M16 5l8 15 8-15M9 27h30M27 27l3 6"/></symbol>
+</defs></svg>
+<script>
+const A='https://www.amazon.es/dp/', T='?tag=ursulafit-21';
+const CATS=[
+ {id:'gym',name:'Gym',img:'../gym.jpg',desc:'Lo que me pongo para entrenar: mallas que marcan bien y tops que aguantan.',items:[
+  ['B07G55R2LB','Colofulkoala','Mallas 7/8 push up con bolsillos','leggings','26,49','4,5','49,9 mil','Mis favoritas: no transparentan al hacer sentadillas.',1],
+  ['B07T66CJ6Z','CAMBIVO','Mallas push up de cintura alta','leggings','19,99','4,4','6,6 mil','Cintura alta que no se baja.'],
+  ['B0CFZPKC6X','Scrunch','Leggings push up scrunch','leggings','19,99','4,3','1,4 mil','Las del efecto que tanto se ve 😉'],
+  ['B0CFTV6BRX','CRZ YOGA','Sujetador Butterluxe espalda en Y','sportsbra','30,00','4,5','7,3 mil','Suave como una segunda piel.'],
+  ['B079PZH7KS','CRZ YOGA','Sujetador deportivo Naked Feeling','sportsbra','29,00','4,6','4,1 mil','Para yoga y días tranquilos.'],
+  ['B01N7R57JT','SYROKAN','Sujetador deportivo alto impacto','sportsbra','33,00','4,2','15,8 mil','Para correr sin preocuparte de nada.'],
+  ['B0B2ZPL1XS','CRZ YOGA','Shorts de ciclista Butterluxe','shorts','24,00','4,6','2,7 mil','Los uso hasta para ir a por café.'],
+  ['B07RKT9PLR','COTOP','Shorts deportivos','shorts','11,98','4,5','4,4 mil','Básicos y baratos.'],
+  ['B0C81T4CVT','UMIPUBO','Mono deportivo manga larga','jumpsuit','21,99','4,4','486','Una pieza y lista.']]},
+ {id:'accesorios',name:'Bolso del gym',img:'../accesorios.jpg',desc:'Todo lo que llevo en el bolso cuando salgo a entrenar.',items:[
+  ['B086P8QK77','PUMA','Bolsa de deporte Fundamentals S','duffel','22,95','4,5','14,9 mil','Pequeña, cabe en la taquilla.',1],
+  ['B07RQHPBHC','Fitgriff','Bolsa de deporte V1','duffel','31,95','4,6','12,1 mil','Con compartimento para zapatillas.'],
+  ['B07DYM7MSH','Sparrow','Botella de acero inoxidable 1 L','bottle','23,86','4,6','61,1 mil','Agua fría todo el día.'],
+  ['B0GVJF14R5','CFX','Bandas elásticas de tela','band','15,90','4,6','14,3 mil','El secreto del día de glúteo.'],
+  ['B016A9IUWY','Panathletic','Set de bandas elásticas','band','9,99','4,4','21,8 mil','Para entrenar también en casa.'],
+  ['B0CVB76RRQ','PUMA','Calcetines tobilleros (3 pares)','socks','9,99','4,5','25,9 mil','Nunca sobran.'],
+  ['B01N67BRCF','Yoga','Esterilla antideslizante 8 mm','mat','28,99','4,4','20,2 mil','Gruesa, para las rodillas.'],
+  ['B0CRTYZG5C','Soundcore','Auriculares inalámbricos P30i','earbuds','31,90','4,5','43,6 mil','Mi playlist va conmigo.']]},
+ {id:'zapatillas',name:'Zapatillas',img:'../zapatillas.jpg',desc:'Para correr por el Paseo Marítimo y para el día a día.',items:[
+  ['B0CGKDXM4S','New Balance','530','sneaker','99,19','4,5','1,7 mil','Las que más me pongo.',1],
+  ['B0BZDSBRHG','ASICS','Gel-Nimbus 25 · running','sneaker','121,50','4,6','3 mil','Amortiguación de nube.'],
+  ['B0FXDPBJLZ','HOKA','Clifton 8 · running','sneaker','156,54','4,5','4,4 mil','Para tiradas largas.'],
+  ['B0H4MGMDJ4','ASICS','Gel-Excite 11','sneaker','62,99','4,5','559','Buena relación calidad-precio.'],
+  ['B0C8TG6Z3S','Nike','Revolution 7','sneaker','40,19','4,6','1,5 mil','Para empezar a correr.'],
+  ['B0D6YQX5WP','Nike','Court Vision Lo · calle','sneaker','71,99','4,5','1,8 mil','Blancas que pegan con todo.'],
+  ['B0C59CQD5B','adidas','VL Court 3.0 · calle','sneaker','43,95','4,4','8,9 mil','Clásicas.'],
+  ['B077MLZ8BM','PUMA','Smash V2 L · calle','sneaker','34,34','4,4','85,3 mil','Las más vendidas por algo.']]},
+ {id:'casual',name:'Día a día',img:'../casual.jpg',desc:'Básicos para pasear, ir de tiendas o tomar un café en Santa Catalina.',items:[
+  ['B0BTDMTJHK','ONLY','Vaqueros wide leg Madison','jeans','46,20','4,4','932','El vaquero que estiliza.',1],
+  ['B016WD349M','ONLY','Jersey de punto Daniella','sweater','18,70','4,4','5,7 mil','Para las tardes de otoño.'],
+  ['B0775XJB25','Amazon Essentials','Camiseta básica','tshirt','11,80','4,5','76,8 mil','La base de todo.'],
+  ['B012OV0Q4M','Wrangler','Chaqueta vaquera','jacket','46,41','4,6','22,7 mil','No pasa de moda.'],
+  ['B0CQ26HP2C','MUIIKOLA','Bolso bandolera pequeño','crossbag','19,37','4,6','5,9 mil','Móvil, llaves y labial.'],
+  ['B07RBV936R','Joopin','Gafas de sol grandes','sunglasses','17,99','4,3','20,8 mil','Imprescindibles en Mallorca.']]},
+ {id:'lenceria',name:'Ropa interior y lencería',img:'../lenceria.jpg',desc:'Lo cómodo de cada día y algo especial para cuando apetece.',items:[
+  ['B0DT4SYLMB','Calvin Klein','Bralette sin relleno con logo','bra','24,51','4,5','158','Cómodo y bonito a la vez.',1],
+  ['B08DXWF9SG','Triumph','Sujetador Amourette Charm','bra','29,95','4,4','1,6 mil','Encaje que sujeta de verdad.'],
+  ['B0161FSJXM','ONLY','Bralette de encaje Chloe','bra','19,90','4,2','1,8 mil','Se puede asomar bajo una camisa.'],
+  ['B0DJQB1KHQ','Avidlove','Top corto de encaje tipo bralette','body','14,44','4,3','399','Para debajo de una americana.'],
+  ['B01IX0WTSE','Sloggi','24/7 Cotton Lace (pack de 3)','briefs','17,00','4,4','5,5 mil','Algodón con un toque de encaje.'],
+  ['B0FCMF57ZD','Sloggi','GO Crush hipster (pack de 3)','briefs','12,50','4,5','205','No se marcan con nada.'],
+  ['B07KXRZXQ7','GAESHOW','Pijama de satén','pajama','23,99','4,3','4,3 mil','Domingos de sofá.'],
+  ['B07FPJTXRV','Vlazom','Bata kimono de satén','robe','12,10','4,6','9,2 mil','El café de la mañana sabe mejor.']]},
+ {id:'noche',name:'Noche y fiesta',img:'../noche.jpg',desc:'Lo que me pongo cuando el finde toca salir.',items:[
+  ['B0B6WC6JDV','Niwicee','Vestido lápiz','dress','27,99','4,2','317','Ajustado y elegante.',1],
+  ['B0DKFXZTSY','Avidlove','Vestido elegante','dress','14,99','4,3','321','Para cenas especiales.'],
+  ['B09QHGDYG4','Lentejuelas','Top de lentejuelas','sequin','25,64','4,2','418','Brilla sin pasarse.'],
+  ['B07QWZW11J','VERO MODA','Minifalda efecto ante','skirt','20,99','4,4','1,1 mil','Con botas, perfecta.'],
+  ['B0DY16LZKY','Danysu','Minifalda corta','skirt','13,99','4,3','1,6 mil','Básica de fiesta.'],
+  ['B07FTMKQP4','Toocool','Body manga larga','body','13,55','4,3','421','Con vaquero o falda.'],
+  ['B01NA8O7CX','DREAM PAIRS','Sandalias de tacón','heels','31,34','4,4','6,2 mil','Altas pero aguantan.'],
+  ['B0B5JQQMDV','OSDUE','Bolso de noche con purpurina','clutch','11,99','4,4','4,9 mil','Lo justo para salir.'],
+  ['B0DZN2NMZD','Senteria','Pendientes de aro plata 925','earrings','17,99','4,5','2,4 mil','Mis aros de siempre.']]}
+];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const covers=document.getElementById('covers'), chips=document.getElementById('chips'), main=document.getElementById('cats');
+CATS.forEach(c=>{
+  covers.insertAdjacentHTML('beforeend',`<a class="cover" href="#${c.id}" data-c="${c.id}"><img src="${c.img}" alt="" loading="lazy"><span>${esc(c.name)}</span></a>`);
+  chips.insertAdjacentHTML('beforeend',`<a class="chip" href="#${c.id}" data-c="${c.id}">${esc(c.name)}</a>`);
+  const cards=c.items.map(([asin,brand,name,ic,price,rate,n,note,pick])=>`
+   <a class="p" href="${A}${asin}${T}" target="_blank" rel="noopener sponsored nofollow" aria-label="${esc(brand+' '+name)} en Amazon">
+    <div class="art">${pick?'<span class="pick">Mi favorito</span>':''}<svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-${ic}"/></svg></div>
+    <div class="body"><span class="brand">${esc(brand)}</span><span class="name">${esc(name)}</span><span class="note">${esc(note)}</span>
+     <span class="meta"><span class="stars">★ <b>${rate}</b> <small>(${n})</small></span><span class="price">${price} €</span></span></div>
+    <span class="cta">Ver en Amazon</span></a>`).join('');
+  main.insertAdjacentHTML('beforeend',`<section id="${c.id}" aria-labelledby="h-${c.id}"><div class="sh"><img src="${c.img}" alt="" loading="lazy"><div><h2 id="h-${c.id}">${esc(c.name)}</h2><p>${esc(c.desc)}</p></div></div><div class="grid">${cards}</div></section>`);
+});
+// highlight current category
+const setCur=id=>document.querySelectorAll('[data-c]').forEach(a=>a.setAttribute('aria-current',a.dataset.c===id?'true':'false'));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){setCur(e.target.id);const chip=chips.querySelector(`[data-c="${e.target.id}"]`);if(chip)chips.scrollTo({left:chip.offsetLeft-16,behavior:'smooth'});}})},{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section').forEach(s=>io.observe(s));
+setCur(location.hash.slice(1)||'gym');
+</script>
+</body></html>
