@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Úrsula Studio · Tu ropa, desfilada cada semana</title>
+<meta name="description" content="Contenido para el Instagram de tu tienda: Úrsula, modelo virtual de Palma, desfila tu ropa en reels, carruseles e historias cada semana. Sin sesiones de fotos. Desde 119 €/mes.">
+<meta property="og:title" content="Úrsula Studio · Tu ropa, desfilada cada semana">
+<meta property="og:description" content="Reels, carruseles e historias con tu ropa puesta, en rincones reales de Palma. Sin sesiones de fotos.">
+<meta property="og:image" content="img/ceesse-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--soft:#6f5d52;--acc:#b0785c;--line:#e6d9c8;--olive:#6b6a3f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  a{color:inherit}
+  img,video{display:block;max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{padding:20px 0;position:sticky;top:0;background:rgba(247,241,233,.92);backdrop-filter:blur(8px);z-index:5;border-bottom:1px solid transparent}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .logo{font-family:"Playfair Display",serif;font-size:22px;text-decoration:none}
+  .logo span{color:var(--acc);font-style:italic}
+  nav{display:flex;gap:22px;font-size:14px}
+  nav a{text-decoration:none;color:var(--soft)}
+  nav .btn-s{background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:30px}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:36px 0 64px}
+  .kicker{color:var(--acc);font-weight:500;letter-spacing:.08em;font-size:13px;text-transform:uppercase}
+  h1{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(38px,6vw,62px);line-height:1.08;margin:10px 0 18px}
+  h1 em{color:var(--acc)}
+  .lead{font-size:18px;color:var(--soft);max-width:31em}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .cta{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;padding:15px 28px;border-radius:40px;font-weight:500}
+  .cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+  .trust{margin-top:18px;font-size:14px;color:var(--soft)}
+  .hero-media{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end}
+  .hero-media img,.hero-media video{width:100%;border-radius:20px;box-shadow:0 18px 44px rgba(52,40,34,.16);object-fit:cover}
+  .hero-media video{aspect-ratio:9/16}
+  .hero-media img{aspect-ratio:4/5;margin-bottom:40px}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(28px,4vw,40px);margin-bottom:8px;line-height:1.15}
+  .sub{color:var(--soft);margin-bottom:32px;max-width:40em}
+  .pains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .pain{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .pain b{display:block;font-weight:500;margin-bottom:6px}
+  .pain p{font-size:15px;color:var(--soft)}
+  .work{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .work figure{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .work img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .work figcaption{padding:10px 12px;font-size:13px;color:var(--soft)}
+  .work figcaption b{color:var(--ink);font-weight:500}
+  .tall img,.tall video{aspect-ratio:9/16;width:100%;object-fit:cover;background:#000}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .step:before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;font-weight:600;margin-bottom:12px}
+  .step b{display:block;font-weight:500;margin-bottom:4px}
+  .step p{font-size:15px;color:var(--soft)}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column}
+  .plan.best{border:2px solid var(--acc);position:relative}
+  .plan.best:before{content:"El más elegido";position:absolute;top:-13px;left:24px;background:var(--acc);color:#fff;font-size:12px;padding:3px 12px;border-radius:20px}
+  .plan h3{font-family:"Playfair Display",serif;font-weight:500;font-size:26px}
+  .plan .for{font-size:14px;color:var(--soft);min-height:44px}
+  .price{font-size:40px;font-weight:600;margin:14px 0 2px}
+  .price small{font-size:15px;font-weight:400;color:var(--soft)}
+  .plan ul{list-style:none;margin:16px 0 22px;flex:1}
+  .plan li{padding:7px 0 7px 26px;position:relative;font-size:15px;border-bottom:1px dashed var(--line)}
+  .plan li:last-child{border-bottom:0}
+  .plan li:before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:600}
+  .plan .cta{text-align:center}
+  .trial{margin-top:22px;background:var(--ink);color:var(--bg);border-radius:22px;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .trial b{font-family:"Playfair Display",serif;font-weight:500;font-size:24px}
+  .trial p{opacity:.8;font-size:15px}
+  .trial .cta{background:var(--bg);color:var(--ink)}
+  .extras{margin-top:18px;font-size:14px;color:var(--soft)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+  .box h3{font-weight:500;font-size:18px;margin-bottom:12px}
+  .box ul{list-style:none}
+  .box li{padding:6px 0 6px 26px;position:relative;font-size:15px}
+  .box li:before{content:"·";position:absolute;left:8px;color:var(--acc);font-weight:700;font-size:20px;line-height:1.1}
+  details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:500;list-style:none;position:relative;padding-right:24px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";position:absolute;right:0;top:-2px;color:var(--acc);font-size:22px}
+  details[open] summary:after{content:"–"}
+  details p{margin-top:10px;color:var(--soft);font-size:15px}
+  .final{text-align:center}
+  .final .lead{margin:0 auto}
+  .final .ctas{justify-content:center}
+  footer{padding:30px 0 40px;font-size:13px;color:var(--soft);border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  @media (max-width:860px){
+    nav a:not(.btn-s){display:none}
+    .hero,.two{grid-template-columns:1fr}
+    .hero{padding-top:16px;gap:28px}
+    .pains,.plans{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .work{grid-template-columns:1fr 1fr}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Úrsula <span>Studio</span></a>
+    <nav>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#planes">Planes</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn-s" href="#planes">Empezar</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div>
+      <p class="kicker">Contenido para tiendas de Mallorca</p>
+      <h1>Tu ropa, <em>desfilada</em> cada semana</h1>
+      <p class="lead">Soy Úrsula, modelo virtual de Palma. Me mandas fotos de tus prendas y yo las llevo puestas en reels, carruseles e historias para el Instagram de tu tienda, en rincones reales de la isla. Sin sesiones de fotos, sin modelos, sin complicaciones.</p>
+      <div class="ctas">
+        <a class="cta" href="#planes">Ver planes · desde 119 €/mes</a>
+        <a class="cta ghost" href="#prueba">Probar por 39 €</a>
+      </div>
+      <p class="trust">Sin permanencia · La ropa, igual que la real · Tú apruebas todo antes de publicar</p>
+    </div>
+    <div class="hero-media">
+      <video src="img/reel-ceesse.mp4" poster="img/reel-ceesse.jpg" autoplay muted loop playsinline aria-label="Reel de Úrsula desfilando un conjunto de Ceesse Studio en la Plaça de Sant Jeroni"></video>
+      <img src="img/ceesse-4.jpg" alt="Úrsula de espaldas mostrando el top Síl·lia y la falda Saurà de Ceesse Studio">
+    </div>
+  </div>
+
+  <section>
+    <h2>Lo que le pasa a casi todas las tiendas</h2>
+    <p class="sub">Tienes la ropa, tienes la tienda… y el Instagram siempre queda para después.</p>
+    <div class="pains">
+      <div class="pain"><b>Una sesión de fotos cuesta cientos de euros</b><p>Y la colección cambia cada pocas semanas. Al final se sube la prenda en la percha.</p></div>
+      <div class="pain"><b>No hay tiempo para crear contenido</b><p>Entre atender, reponer y cobrar, nadie piensa en reels ni en tendencias.</p></div>
+      <div class="pain"><b>Las fotos planas no venden</b><p>La gente quiere ver cómo cae la falda, cómo queda el top al caminar. Eso es lo que hago yo.</p></div>
+    </div>
+  </section>
+
+  <section id="trabajos">
+    <h2>Así queda</h2>
+    <p class="sub">Contenido reciente con ropa de marcas de Mallorca, en lugares reales de Palma.</p>
+    <div class="work">
+      <figure><img src="img/ceesse-1.jpg" alt="Úrsula con top Síl·lia y falda Saurà en la Plaça de Sant Jeroni"><figcaption><b>Ceesse Studio</b> · Top Síl·lia y falda Saurà</figcaption></figure>
+      <figure><img src="img/ceesse-3.jpg" alt="Plano medio del top Síl·lia de Ceesse"><figcaption><b>Ceesse Studio</b> · Detalle del top</figcaption></figure>
+      <figure><img src="img/ceesse-5.jpg" alt="Úrsula sentada en el borde de la fuente de Sant Jeroni"><figcaption><b>Ceesse Studio</b> · Carrusel de 5 fotos</figcaption></figure>
+      <figure><img src="img/look-cafe.jpg" alt="Úrsula con un look de otoño en un café de Palma"><figcaption><b>Look de otoño</b> · Café en Palma</figcaption></figure>
+      <figure class="tall"><img src="img/llum-mediterranea.jpg" alt="Estética mediterránea con ropa de LLUM"><figcaption><b>LLUM</b> · Estética mediterránea</figcaption></figure>
+      <figure class="tall"><img src="img/llum-rockera.jpg" alt="Estética rockera con ropa de LLUM"><figcaption><b>LLUM</b> · Estética rockera</figcaption></figure>
+      <figure class="tall"><video src="img/reel-llum.mp4" poster="img/reel-llum.jpg" muted loop playsinline controls preload="metadata" aria-label="Reel de 6 estéticas con ropa de LLUM"></video><figcaption><b>Reel 6 estéticas</b> · LLUM · 19 s</figcaption></figure>
+      <figure class="tall"><video src="img/reel-ceesse.mp4" poster="img/reel-ceesse.jpg" muted loop playsinline controls preload="metadata" aria-label="Reel de desfile de Ceesse Studio"></video><figcaption><b>Reel desfile</b> · Ceesse · 12 s</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="como">
+    <h2>Cómo funciona</h2>
+    <p class="sub">Tú solo subes las fotos de tus prendas. Del resto me ocupo yo. <a href="panel" style="color:var(--acc);font-weight:500">Mira cómo es el panel de tu tienda →</a></p>
+    <div class="steps">
+      <div class="step"><b>Eliges tu plan</b><p>Pagas el mes y recibes el acceso a tu panel privado.</p></div>
+      <div class="step"><b>Subes tus prendas</b><p>Desde el móvil: foto de frente, de espalda y un detalle, con nombre y precio.</p></div>
+      <div class="step"><b>Te enseño la semana</b><p>Cada viernes ves los reels, carruseles e historias y los apruebas o pides cambios.</p></div>
+      <div class="step"><b>Se publica solo</b><p>Lo programo en tu Instagram a las mejores horas, con tus etiquetas y tu ubicación.</p></div>
+    </div>
+  </section>
+
+  <section id="planes">
+    <h2>Planes</h2>
+    <p class="sub">Precios pensados para tiendas locales. Pago mensual, sin permanencia: lo dejas cuando quieras.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Básico</h3>
+        <p class="for">Para empezar a tener presencia todas las semanas.</p>
+        <p class="price">119 € <small>/mes + IVA</small></p>
+        <ul>
+          <li>2 reels al mes</li>
+          <li>2 carruseles al mes</li>
+          <li>8 historias con encuestas y enlaces</li>
+          <li>Textos, hashtags y ubicación</li>
+          <li>Respuestas automáticas a preguntas frecuentes</li>
+        </ul>
+        <a class="cta ghost" href="https://ig.me/m/ursulafitroig" target="_blank" rel="noopener">Elegir Básico</a>
+      </div>
+      <div class="plan best">
+        <h3>Estándar</h3>
+        <p class="for">Contenido cada semana y alguien atento a tu comunidad.</p>
+        <p class="price">219 € <small>/mes + IVA</small></p>
+        <ul>
+          <li>4 reels al mes</li>
+          <li>4 carruseles al mes</li>
+          <li>12 historias</li>
+          <li>Respuesta a comentarios todos los días</li>
+          <li>Respuestas automáticas a preguntas frecuentes</li>
+          <li>1 colaboración al mes en el perfil de Úrsula</li>
+        </ul>
+        <a class="cta" href="https://ig.me/m/ursulafitroig" target="_blank" rel="noopener">Elegir Estándar</a>
+      </div>
+      <div class="plan">
+        <h3>Pro</h3>
+        <p class="for">Tu Instagram funcionando, incluso cuando la tienda está cerrada.</p>
+        <p class="price">349 € <small>/mes + IVA</small></p>
+        <ul>
+          <li>6 reels al mes</li>
+          <li>6 carruseles al mes</li>
+          <li>20 historias</li>
+          <li>Asistente de mensajes con IA que responde a tus clientas</li>
+          <li>2 colaboraciones al mes en el perfil de Úrsula</li>
+          <li>Úrsula en tu tienda (con fotos de tu local)</li>
+          <li>Informe mensual de resultados</li>
+        </ul>
+        <a class="cta ghost" href="https://ig.me/m/ursulafitroig" target="_blank" rel="noopener">Elegir Pro</a>
+      </div>
+    </div>
+
+    <div class="trial" id="prueba">
+      <div>
+        <b>Semana de prueba · 39 €</b>
+        <p>1 reel, 1 carrusel y 2 historias con tus prendas. Si luego contratas un plan, te lo descuento.</p>
+      </div>
+      <a class="cta" href="https://ig.me/m/ursulafitroig" target="_blank" rel="noopener">Quiero probar</a>
+    </div>
+    <p class="extras">Extras: reel adicional 35 € · colaboración extra en el perfil de Úrsula 45 € · fotos para tu web 6 €/foto (mín. 10) · asistente de mensajes en Básico o Estándar +59 €/mes.</p>
+  </section>
+
+  <section>
+    <div class="two">
+      <div class="box">
+        <h3>Lo que me envías tú</h3>
+        <ul>
+          <li>Fotos de cada prenda: de frente, de espalda y un detalle (con el móvil, en percha o maniquí vale)</li>
+          <li>Nombre, precio, tallas y enlace de compra</li>
+          <li>Si quieres, fotos de tu tienda para que aparezca en ella</li>
+          <li>Un cuestionario corto sobre tu tienda para el asistente de mensajes</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Lo que no te voy a pedir</h3>
+        <ul>
+          <li>Tu contraseña: me añades como colaboradora desde Meta Business Suite</li>
+          <li>Sesiones de fotos ni modelos</li>
+          <li>Permanencia ni contratos largos</li>
+          <li>Que aprendas a editar vídeos o a seguir tendencias</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <h2>Preguntas frecuentes</h2>
+    <p class="sub">Y si te queda alguna, escríbeme por Instagram.</p>
+    <details><summary>¿Úrsula es una persona real?</summary><p>No. Úrsula es una modelo virtual creada con inteligencia artificial y lo decimos siempre: todas las publicaciones llevan la etiqueta de IA de Instagram. Lo que sí es real es tu ropa y los lugares de Palma donde aparece.</p></details>
+    <details><summary>¿La ropa queda igual que la de verdad?</summary><p>Es lo más importante. Color, largo, tejido y detalles tienen que coincidir con tu prenda, y por eso nada se publica sin que tú lo apruebes. Si algo no está igual, se corrige.</p></details>
+    <details><summary>¿Tengo que darte mi contraseña de Instagram?</summary><p>Nunca. Me añades como colaboradora desde Meta Business Suite y puedes quitarme el acceso cuando quieras.</p></details>
+    <details><summary>¿Cómo funciona el asistente de mensajes?</summary><p>Responde lo que más te preguntan (horario, tallas, envíos, cambios) con la información que tú nos das, y avisa de que es un asistente automático. Los pedidos, pagos y reclamaciones siempre te los pasa a ti.</p></details>
+    <details><summary>¿Hay permanencia?</summary><p>No. Pagas mes a mes y cancelas cuando quieras desde tu suscripción.</p></details>
+    <details><summary>¿Me hacéis factura?</summary><p>Sí, con IVA, para que puedas deducirla como gasto de tu negocio.</p></details>
+    <details><summary>¿Y si tengo pocos seguidores?</summary><p>Justamente para eso sirve. Con las colaboraciones en el perfil de Úrsula, las etiquetas de lugar y el contenido semanal, tu cuenta empieza a moverse. No te prometemos cifras, pero sí constancia y calidad.</p></details>
+  </section>
+
+  <section class="final">
+    <h2>¿Empezamos con una semana de prueba?</h2>
+    <p class="lead">39 € y en unos días ves tu ropa desfilada por Palma. Si te gusta, seguimos.</p>
+    <div class="ctas">
+      <a class="cta" href="https://ig.me/m/ursulafitroig" target="_blank" rel="noopener">Probar por 39 €</a>
+      <a class="cta ghost" href="https://instagram.com/ursulafitroig" target="_blank" rel="noopener">Escribirme por Instagram</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Úrsula Studio · Palma de Mallorca</span>
+    <span>Úrsula es una modelo virtual creada con IA · <a href="https://instagram.com/ursulafitroig">@ursulafitroig</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
