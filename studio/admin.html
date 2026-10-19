@@ -17,7 +17,10 @@ label{font-size:12.5px;color:var(--soft);display:block;margin-bottom:4px}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn.sm{padding:6px 12px;font-size:13px}
 .t-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
 .t-head b{font-size:17px;font-weight:600}.muted{color:var(--soft);font-size:13px}
-.link{font-size:12.5px;word-break:break-all;background:#fff;border:1px dashed var(--line);border-radius:8px;padding:6px 8px;margin-top:6px}
+.link{font-size:12.5px;background:#fff;border:1px dashed var(--line);border-radius:8px;padding:6px 8px;margin-top:10px;display:flex;align-items:center;gap:10px}
+.link span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--soft)}
+.link .btn{flex:none;white-space:nowrap}
+.ctl{display:flex;align-items:center;gap:8px}.ctl select{width:auto;padding:6px 28px 6px 12px;font-size:14px}.ctl .btn{white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
 .pr{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;font-size:12.5px}
 .pr .im{display:flex;gap:2px;height:120px}.pr img{flex:1;min-width:0;object-fit:cover}
@@ -50,8 +53,8 @@ function ficha(f){if(!f||!Object.keys(f).length)return 'Todavía no la completó
 async function cargar(){let d;try{d=await rpc('studio_admin_resumen',{p_key:KEY})}catch(e){$('#msg').textContent='Sin acceso: '+e.message;return}
  $('#msg').textContent=`${d.tiendas.length} tienda(s)`;$('#app').hidden=false;
  $('#tiendas').innerHTML=d.tiendas.map(t=>`<div class="card" data-id="${t.id}"><div class="t-head"><div><b>${esc(t.nombre)}</b> <span class="muted">${esc(t.instagram||'')} · ${esc(t.plan)} · ${t.prendas} prendas${t.activa?'':' · INACTIVA'}</span></div>
-  <div><select data-plan="${t.id}">${['prueba','basico','estandar','pro'].map(p=>`<option ${p===t.plan?'selected':''}>${p}</option>`).join('')}</select> <button class="btn ghost sm" data-act="${t.id}" data-v="${!t.activa}">${t.activa?'Desactivar':'Activar'}</button></div></div>
-  <div class="link">${esc(panelURL(t.token))} <button class="btn sm" data-copy="${esc(panelURL(t.token))}">Copiar enlace</button></div>
+  <div class="ctl"><select data-plan="${t.id}">${['prueba','basico','estandar','pro'].map(p=>`<option ${p===t.plan?'selected':''}>${p}</option>`).join('')}</select> <button class="btn ghost sm" data-act="${t.id}" data-v="${!t.activa}">${t.activa?'Desactivar':'Activar'}</button></div></div>
+  <div class="link"><span>${esc(panelURL(t.token))}</span> <button class="btn sm" data-copy="${esc(panelURL(t.token))}">Copiar enlace</button></div>
   <details><summary>Prendas (${t.prendas})</summary><div class="grid">${(t.lista_prendas||[]).map(p=>`<div class="pr"><div class="im">${(p.fotos||[]).map(u=>`<a href="${esc(u)}" target="_blank"><img src="${esc(u)}" alt="" loading="lazy"></a>`).join('')}</div><div class="tx"><b>${esc(p.nombre)}</b>${p.precio?' · '+esc(p.precio)+' €':''}\n${esc([p.tallas,p.colores].filter(Boolean).join(' · '))}\n${esc(p.notas||'')}</div></div>`).join('')||'<span class="muted">Sin prendas</span>'}</div></details>
   <details><summary>Ficha del asistente</summary><pre>${esc(ficha(t.ficha))}</pre><button class="btn ghost sm" data-copyf="${t.id}">Copiar ficha</button></details>
   <details open><summary>Publicaciones (${t.posts.length})</summary>${t.posts.map(p=>`<div class="post">${p.media_url?(/\.mp4/i.test(p.media_url)?`<video src="${esc(p.media_url)}" muted></video>`:`<img src="${esc(p.media_url)}" alt="">`):''}<div style="flex:1"><b>${esc(p.tipo)}</b> · ${esc(p.fecha||'sin fecha')} · <span class="st ${esc(p.estado)}">${esc(p.estado)}</span>${p.comentario?'<br>💬 '+esc(p.comentario):''}<br><span class="muted">${esc(p.titulo||'')} ${esc((p.caption||'').slice(0,140))}</span></div><div>${p.estado!=='publicado'?`<button class="btn ghost sm" data-pub="${p.id}">Marcar publicado</button>`:''}</div></div>`).join('')}
