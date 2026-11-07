@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guía de colores · Úrsula Roig</title>
+<meta name="description" content="12 combinaciones de colores que siempre funcionan, con las prendas para hacerlas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--line:#e6d9c8;--tint:#f1e5d8;--star:#c48a2c}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1814;--card:#28211c;--ink:#f3ebe2;--muted:#bfae9f;--sea:#c98e6e;--line:#3a3029;--tint:#332a23;--star:#e0b25a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Poppins,system-ui,sans-serif}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 56px}
+.back{display:inline-flex;gap:6px;text-decoration:none;color:var(--muted);font-size:14px;padding:8px 0}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(30px,6vw,44px);margin:12px 0 0;line-height:1.1}
+h1 em{color:var(--sea)}h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:24px;margin:0}
+.lead{color:var(--muted);margin:8px 0 0;max-width:600px}
+.tip{background:var(--tint);border-radius:14px;padding:14px 16px;margin:18px 0 6px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
+.combo{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.combo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 45%;display:block}
+.body{padding:14px 16px 16px}.num{color:var(--sea);font-size:13px;font-weight:600}
+.dots{display:inline-flex;gap:4px;vertical-align:middle;margin-left:6px}.dots i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.p{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:13.5px}
+.p:first-of-type{border-top:0}.p small{display:block;color:var(--muted);font-size:12px}
+.btn{flex:none;text-decoration:none;background:var(--ink);color:var(--bg);border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:500}
+.legal{color:var(--muted);font-size:12px;margin-top:28px}
+</style></head><body><div class="wrap">
+<a class="back" href="/">← Volver</a>
+<h1>Guía de <em>colores</em></h1>
+<p class="lead">Las 12 combinaciones del reel, con prendas para hacerlas. Muchas se repiten: con pocas piezas sacas un montón de looks 🤍</p>
+<div class="tip">Truco: si dudas, combina un color neutro (beige, crema, gris, chocolate, negro o blanco) con uno con más vida (verde, rosa, celeste, lavanda, amarillo o burdeos).</div>
+<div class="grid" id="g"></div>
+<p class="legal">Enlaces de afiliada de Amazon: si compras desde aquí, Amazon me da una pequeña comisión y a ti no te cuesta nada más. Las fotos son de mis looks (contenido generado con IA); las prendas de los enlaces son las más parecidas que he encontrado en cada color. #afiliado</p>
+</div>
+<script>
+const A=a=>'https://www.amazon.es/dp/'+a+'?tag=ursulafit-21';
+const P={
+blazerBeige:['Blazer beige','PIECES Bosella · color Beige (White Pepper) · 4,2★',A('B09F5PYFQY')],
+blazerGris:['Blazer gris','PIECES Bosella · color Gris claro · 4,2★',A('B08K8QRTRZ')],
+blazerLav:['Blazer lavanda','PIECES Bosella · color Orchid Bloom · 4,2★',A('B09JGD89NK')],
+pantChoc:['Pantalón ancho chocolate','JDY Catia · color Chocolate Torte · 4,3★',A('B0FND1YQ3L')],
+pantNegro:['Pantalón ancho negro','JDY Catia · color Negro · 4,3★',A('B0BK6Q92Z7')],
+pantVerde:['Pantalón ancho verde oscuro','JDY Catia · color Verde oscuro · 4,3★',A('B0DKFQCNW9')],
+pantVino:['Pantalón ancho burdeos','JDY Catia · color Vino · 4,3★',A('B0F99XHR5W')],
+carRosa:['Cárdigan rosa','GRECERELLE · color Rosa claro · 4,5★',A('B0D99W3578')],
+carCeleste:['Cárdigan celeste','GRECERELLE · color Azul claro · 4,5★',A('B0FCKRPV4Q')],
+carLav:['Cárdigan lavanda grisáceo','GRECERELLE · color Violet Gray · 4,5★',A('B0FCLL5DPZ')],
+carAmarillo:['Cárdigan amarillo','GRECERELLE · color Amarillo · 4,5★',A('B0FCLZ981D')],
+carVerde:['Cárdigan verde','GRECERELLE · color Verde oscuro · 4,5★',A('B0DCVW8TN5')],
+falda:['Falda tostada','VERO MODA Donnadina, efecto ante · color Cognac · 4,4★',A('B07QZ7PSKP')],
+camBlanca:['Camiseta blanca','Amazon Essentials, ajustada · 4,5★',A('B07XQJYRL5')],
+jerseyCrema:['Jersey crema','Amazon Essentials, punto fino · color Avena · 4,2★',A('B08T7GV559')],
+jerseyCamel:['Jersey camel','Jersey Casilda Camel · Pink Pomelo','https://pinkpomelo.es'],
+};
+const C=[
+['Beige + blanco',['#d8c6ad','#ffffff'],['blazerBeige','camBlanca']],
+['Beige + chocolate',['#d8c6ad','#4a2e22'],['blazerBeige','pantChoc']],
+['Verde + crema',['#1f5b3f','#efe6d6'],['pantVerde','jerseyCrema']],
+['Verde + camel',['#1f5b3f','#b98a5a'],['carVerde','jerseyCamel']],
+['Gris + negro',['#a9a9a9','#1a1a1a'],['blazerGris','pantNegro']],
+['Gris + rosa',['#a9a9a9','#efc4c4'],['blazerGris','carRosa']],
+['Celeste + blanco',['#a9c8ea','#ffffff'],['carCeleste','camBlanca']],
+['Celeste + chocolate',['#a9c8ea','#4a2e22'],['carCeleste','pantChoc']],
+['Crema + tostado',['#efe6d6','#a8683c'],['jerseyCrema','falda']],
+['Crema + burdeos',['#efe6d6','#5e1d2b'],['jerseyCrema','pantVino']],
+['Lavanda + gris',['#c7b6dc','#a9a9a9'],['carLav','blazerGris']],
+['Lavanda + amarillo',['#c7b6dc','#f1dc7a'],['blazerLav','carAmarillo']],
+];
+document.getElementById('g').innerHTML=C.map((c,i)=>`<article class="combo"><img loading="lazy" src="img/c${String(i+1).padStart(2,'0')}.jpg" alt="${c[0]}"><div class="body"><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${c[0]}<span class="dots">${c[1].map(x=>`<i style="background:${x}"></i>`).join('')}</span></h2>${c[2].map(k=>{const p=P[k];return `<div class="p"><div>${p[0]}<small>${p[1]}</small></div><a class="btn" href="${p[2]}" target="_blank" rel="sponsored noopener">Ver</a></div>`}).join('')}</div></article>`).join('');
+</script></body></html>
