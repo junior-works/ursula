@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rutina de glúteo · Úrsula Roig</title>
+<meta name="description" content="8 ejercicios de glúteo con banco y mancuerna, con series, repeticiones y técnica.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--line:#e6d9c8;--tint:#f1e5d8;--chip:#2a221d}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1814;--card:#28211c;--ink:#f3ebe2;--muted:#bfae9f;--sea:#c98e6e;--line:#3a3029;--tint:#332a23;--chip:#14100d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Poppins,system-ui,sans-serif}
+a{color:inherit}.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 56px}
+.back{display:inline-flex;gap:6px;text-decoration:none;color:var(--muted);font-size:14px;padding:8px 0}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(30px,6vw,44px);margin:12px 0 0;line-height:1.1}
+h1 em{color:var(--sea)}h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:22px;margin:0;line-height:1.2}
+.lead{color:var(--muted);margin:8px 0 0;max-width:620px}
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:18px 0 6px}
+.plan div{background:var(--tint);border-radius:14px;padding:12px 14px;font-size:14px}.plan b{display:block;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.ex video{width:100%;aspect-ratio:720/1264;object-fit:cover;display:block;background:#000}
+.body{padding:14px 16px 16px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.num{color:var(--sea);font-size:13px;font-weight:600}.zona{flex:none;background:var(--chip);border-radius:12px;padding:6px}.zona img{height:46px;display:block}
+.tag{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--tint);color:var(--sea)}
+.ex ul{margin:10px 0 0;padding-left:18px;font-size:14px;color:var(--ink)}.ex li{margin:3px 0}
+h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:24px;margin:34px 0 4px}
+.p{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:14px;max-width:620px}
+.p small{display:block;color:var(--muted);font-size:12px}
+.btn{flex:none;text-decoration:none;background:var(--ink);color:var(--bg);border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:500}
+.legal{color:var(--muted);font-size:12px;margin-top:28px;max-width:720px}
+</style></head><body><div class="wrap">
+<a class="back" href="/">← Volver</a>
+<h1>Rutina de <em>glúteo</em> 🍑</h1>
+<p class="lead">8 ejercicios con banco y mancuerna para trabajar el glúteo desde todos los ángulos: a dos piernas para la fuerza y a una pierna para la estabilidad. Guárdala para tu próximo leg day 💪</p>
+<div class="plan">
+<div><b>A dos piernas</b>3 series × 12–15 repeticiones</div>
+<div><b>A una pierna</b>3 series × 10–12 por lado</div>
+<div><b>Descanso</b>60–90 s entre series</div>
+<div><b>Peso</b>el que te deje hacer las últimas 2 repeticiones con esfuerzo, sin perder la técnica</div>
+</div>
+<div class="grid" id="g"></div>
+<h3>Lo que uso</h3>
+<div id="kit"></div>
+<p class="legal">Enlaces de afiliada de Amazon: si compras desde aquí, Amazon me da una pequeña comisión y a ti no te cuesta nada más. #afiliado<br>Los vídeos son de mi contenido generado con IA. Esto es lo que hago yo, no sustituye el consejo de un entrenador: si tienes alguna lesión o molestia, consulta antes con un profesional.</p>
+</div>
+<script>
+const E=[
+['Patada lateral de rodillas','una',['Rodilla de apoyo en la esterilla y antebrazo en el banco.','Mancuerna en la cadera de la pierna que trabaja.','Lleva la pierna hacia fuera y arriba sin girar el tronco; baja controlando.']],
+['Peso muerto rumano','dos',['Pies a la anchura de la cadera, rodillas un poco flexionadas.','Lleva la cadera atrás con la espalda recta y las mancuernas pegadas a las piernas.','Sube apretando el glúteo, sin arquear la zona lumbar.']],
+['Puente de glúteo con pies en el banco','dos',['Tumbada, talones sobre el banco y mancuerna en la cadera.','Empuja con los talones y sube la cadera hasta alinearla con rodillas y hombros.','Aprieta arriba un segundo y baja despacio.']],
+['Hip thrust con mancuerna','dos',['Espalda apoyada en el borde del banco, a la altura de los omóplatos.','Mancuerna sobre la cadera, pies firmes y espinillas verticales arriba.','Sube con el glúteo, barbilla hacia el pecho, sin arquear la espalda.']],
+['Elevación de rodilla a una pierna','una',['De pie, una mano en el banco para equilibrarte y la mancuerna en la otra.','Sube la rodilla al frente y vuelve a llevar la pierna atrás con control.','La pierna de apoyo es la que trabaja: mantén la cadera estable.']],
+['Peso muerto rumano en B-stance','una',['Casi todo el peso en la pierna de delante; la de atrás solo apoya la punta.','Lleva la cadera atrás con la espalda recta y la mancuerna cerca de la pierna.','Sube empujando con el talón de delante.']],
+['Puente de glúteo en el suelo','dos',['Tumbada, pies apoyados cerca del glúteo y mancuerna en la cadera.','Sube la cadera empujando con los talones.','Aprieta arriba, baja sin llegar a descansar del todo en el suelo.']],
+['Sentadilla al banco en B-stance','una',['De espaldas al banco, el peso en la pierna de delante y la de atrás de apoyo.','Baja llevando la cadera atrás hasta rozar el banco, sin sentarte.','Sube empujando con el talón de delante.']],
+];
+document.getElementById('g').innerHTML=E.map((e,i)=>`<article class="ex"><video src="v/e${i+1}.mp4" poster="v/e${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]==='dos'?'A dos piernas · 3 × 12–15':'A una pierna · 3 × 10–12 por lado'}</span></div><div class="zona" title="Zona que trabaja"><img src="v/z${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
+const A=a=>'https://www.amazon.es/dp/'+a+'?tag=ursulafit-21';
+const K=[
+['Conjunto sin costuras (top + leggings)','El que llevo en el vídeo · 4,3★',A('B0BLS672M6')],
+['Esterilla antideslizante 8 mm','Para las rodillas y los puentes · 4,4★',A('B01N67BRCF')],
+['Bandas elásticas de tela para glúteo','Para calentar antes de empezar · 4,6★',A('B0GVJF14R5')],
+];
+document.getElementById('kit').innerHTML=K.map(k=>`<div class="p"><div>${k[0]}<small>${k[1]}</small></div><a class="btn" href="${k[2]}" target="_blank" rel="sponsored noopener">Ver</a></div>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(x=>{const v=x.target;if(x.isIntersecting){v.preload='auto';v.play().catch(()=>{})}else v.pause()}),{threshold:.25});
+document.querySelectorAll('video').forEach(v=>io.observe(v));
+</script></body></html>
