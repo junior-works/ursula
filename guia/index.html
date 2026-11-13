@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Guía de colores · Úrsula Roig</title>
-<meta name="description" content="12 combinaciones de colores que siempre funcionan, con las prendas para hacerlas.">
+<meta name="description" content="Combinaciones de 3 colores y 12 combinaciones de colores que siempre funcionan, con las prendas para hacerlas.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--line:#e6d9c8;--tint:#f1e5d8;--star:#c48a2c}
@@ -24,11 +24,14 @@ h1 em{color:var(--sea)}h2{font-family:"Playfair Display",Georgia,serif;font-weig
 .legal{color:var(--muted);font-size:12px;margin-top:28px}
 </style></head><body><div class="wrap">
 <a class="back" href="/">← Volver</a>
-<h1>Guía de <em>colores</em></h1>
+<h1>Combina <em>3 colores</em></h1>
+<p class="lead">Las 4 combinaciones del reel: dos colores base y uno de acento, con las prendas y accesorios más parecidos que he encontrado 🤍</p>
+<div class="grid" id="g2"></div>
+<h1 style="margin-top:44px">Guía de <em>colores</em></h1>
 <p class="lead">Las 12 combinaciones del reel, con prendas para hacerlas. Muchas se repiten: con pocas piezas sacas un montón de looks 🤍</p>
 <div class="tip">Truco: si dudas, combina un color neutro (beige, crema, gris, chocolate, negro o blanco) con uno con más vida (verde, rosa, celeste, lavanda, amarillo o burdeos).</div>
 <div class="grid" id="g"></div>
-<p class="legal">Enlaces de afiliada de Amazon: si compras desde aquí, Amazon me da una pequeña comisión y a ti no te cuesta nada más. Las fotos son de mis looks (contenido generado con IA); las prendas de los enlaces son las más parecidas que he encontrado en cada color. #afiliado</p>
+<p class="legal">Enlaces de afiliada de Amazon: si compras desde aquí, Amazon me da una pequeña comisión y a ti no te cuesta nada más. Las fotos son de mis looks y de prendas recreadas (contenido generado con IA); las prendas de los enlaces son las más parecidas que he encontrado en cada color. #afiliado</p>
 </div>
 <script>
 const A=a=>'https://www.amazon.es/dp/'+a+'?tag=ursulafit-21';
@@ -65,4 +68,42 @@ const C=[
 ['Lavanda + amarillo',['#c7b6dc','#f1dc7a'],['blazerLav','carAmarillo']],
 ];
 document.getElementById('g').innerHTML=C.map((c,i)=>`<article class="combo"><img loading="lazy" src="img/c${String(i+1).padStart(2,'0')}.jpg" alt="${c[0]}"><div class="body"><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${c[0]}<span class="dots">${c[1].map(x=>`<i style="background:${x}"></i>`).join('')}</span></h2>${c[2].map(k=>{const p=P[k];return `<div class="p"><div>${p[0]}<small>${p[1]}</small></div><a class="btn" href="${p[2]}" target="_blank" rel="sponsored noopener">Ver</a></div>`}).join('')}</div></article>`).join('');
+
+const P2={
+c1a:['Pantalón azul marino','4,6★',A('B0H4G8WG6Q')],
+c1b:['Blazer blanco entallado','3,7★',A('B0C48WX3JM')],
+c1c:['Gafas ovaladas rojas','4,4★',A('B0DSBNR6W3')],
+c1d:['Reloj esfera burdeos','',A('B0D7NRWCRW')],
+c1e:['Bolso burdeos','4,5★',A('B09BVMZJS5')],
+c1f:['Pendientes piedra roja','4,2★',A('B0BR6K16ZC')],
+c1g:['Zapatos destalonados burdeos','Charol, tacón alto',A('B0GZD7853K')],
+c2a:['Top chocolate cruzado','4,5★',A('B0H9LBFX2H')],
+c2b:['Minifalda blanca','4,3★',A('B0DY14VSJ8')],
+c2c:['Zapatos celestes de tacón','Tacón alto · 4,3★',A('B0H5BYR3W3')],
+c2d:['Bolso celeste de asa','4,4★',A('B0F2HR1M1H')],
+c2e:['Gafas sin montura celestes','4,1★',A('B0DXKZLS4F')],
+c2f:['Reloj correa celeste','4,2★',A('B0G43HPSRS')],
+c2g:['Pendientes topacio celeste','4,2★',A('B09WZWNMB7')],
+c3a:['Falda negra de satén','3,8★',A('B0DYDNQDR6')],
+c3b:['Blusa blanca abotonada','4,3★',A('B0DLKLM67H')],
+c3c:['Bolso sobre amarillo claro','4,3★',A('B0H2574ZNK')],
+c3d:['Gafas ovaladas amarillas','3,8★',A('B0DY8F4P8Q')],
+c3e:['Reloj dorado con perlas','3,9★',A('B0H5WQ4R1N')],
+c3f:['Pendientes trébol dorados','4,0★',A('B0B4S3K958')],
+c3g:['Sandalias amarillas de tacón','4,5★',A('B0F8T9GYR1')],
+c4a:['Cárdigan rosa','4,6★',A('B0G4LJMG9M')],
+c4b:['Pantalón gris ancho','4,3★',A('B0FLDJLDB4')],
+c4c:['Gafas finas verdes','4,2★',A('B0H2TXD8F8')],
+c4d:['Pendientes verdes','4,2★',A('B0DBYS4HJF')],
+c4e:['Bolso verde acolchado','4,7★',A('B0H4624X8S')],
+c4f:['Reloj dorado esfera verde','3,9★',A('B0DLKMXQ7B')],
+c4g:['Zapatos verdes de tacón','Tacón alto',A('B0GVYMLV8X')],
+};
+const C2=[
+['Azul marino + blanco + burdeos',['#1b2a4a','#ffffff','#8b1a2b'],['c1a','c1b','c1c','c1d','c1e','c1f','c1g']],
+['Chocolate + crema + celeste',['#4a2e22','#f2e8d5','#a8cbe8'],['c2a','c2b','c2c','c2d','c2e','c2f','c2g']],
+['Negro + blanco + amarillo pastel',['#111111','#ffffff','#f3e79b'],['c3a','c3b','c3c','c3d','c3e','c3f','c3g']],
+['Rosa + gris + verde oliva',['#f4c6d3','#8a8d91','#7c8b4a'],['c4a','c4b','c4c','c4d','c4e','c4f','c4g']],
+];
+document.getElementById('g2').innerHTML=C2.map((c,i)=>`<article class="combo"><img loading="lazy" src="img/r${i+1}.jpg" alt="${c[0]}"><div class="body"><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${c[0]}<span class="dots">${c[1].map(x=>`<i style="background:${x}"></i>`).join('')}</span></h2>${c[2].map(k=>{const p=P2[k];return `<div class="p"><div>${p[0]}${p[1]?`<small>${p[1]}</small>`:''}</div><a class="btn" href="${p[2]}" target="_blank" rel="sponsored noopener">Ver</a></div>`}).join('')}</div></article>`).join('');
 </script></body></html>
