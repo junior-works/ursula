@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rutina de glúteo · Úrsula Roig</title>
-<meta name="description" content="8 ejercicios de glúteo con banco y mancuerna, con series, repeticiones y técnica.">
+<meta name="description" content="Rutinas de glúteo: 4 ejercicios en el suelo sin material y 8 con banco y mancuerna, con series, repeticiones y técnica.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--line:#e6d9c8;--tint:#f1e5d8;--chip:#2a221d}
@@ -16,6 +16,7 @@ h1 em{color:var(--sea)}h2{font-family:"Playfair Display",Georgia,serif;font-weig
 .plan div{background:var(--tint);border-radius:14px;padding:12px 14px;font-size:14px}.plan b{display:block;font-size:16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
 .ex{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.ex.w video{aspect-ratio:16/9}.sec{margin-top:30px}.new{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--sea);color:#fff;margin-bottom:6px}
 .ex video{width:100%;aspect-ratio:720/1264;object-fit:cover;display:block;background:#000}
 .body{padding:14px 16px 16px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .num{color:var(--sea);font-size:13px;font-weight:600}.zona{flex:none;background:var(--chip);border-radius:12px;padding:6px}.zona img{height:46px;display:block}
@@ -29,7 +30,18 @@ h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:24px;m
 </style></head><body><div class="wrap">
 <a class="back" href="/">← Volver</a>
 <h1>Rutina de <em>glúteo</em> 🍑</h1>
-<p class="lead">8 ejercicios con banco y mancuerna para trabajar el glúteo desde todos los ángulos: a dos piernas para la fuerza y a una pierna para la estabilidad. Guárdala para tu próximo leg day 💪</p>
+<p class="lead">Dos rutinas para trabajar el glúteo desde todos los ángulos: una en el suelo sin material y otra con banco y mancuerna. Guárdalas para tu próximo leg day 💪</p>
+<div class="sec"><span class="new">Nuevo</span><h3 style="margin:0">Glúteo en el suelo · 4 ejercicios</h3>
+<p class="lead">Solo necesitas una esterilla. Los mismos 4 ejercicios del reel, con la técnica de cada uno.</p></div>
+<div class="grid" id="s"></div>
+<div class="plan">
+<div><b>Series</b>3 × 12 por pierna en las patadas · 3 × 12 en la elevación de cadera</div>
+<div><b>Descanso</b>60 s entre series</div>
+<div><b>Ritmo</b>sube en 1 segundo, aprieta arriba y baja en 2</div>
+<div><b>Para subir nivel</b>tobilleras con peso o una banda elástica por encima de las rodillas</div>
+</div>
+<div class="sec"><h3 style="margin:0">Con banco y mancuerna · 8 ejercicios</h3>
+<p class="lead">A dos piernas para la fuerza y a una pierna para la estabilidad.</p></div>
 <div class="plan">
 <div><b>A dos piernas</b>3 series × 12–15 repeticiones</div>
 <div><b>A una pierna</b>3 series × 10–12 por lado</div>
@@ -53,9 +65,20 @@ const E=[
 ['Sentadilla al banco en B-stance','una',['De espaldas al banco, el peso en la pierna de delante y la de atrás de apoyo.','Baja llevando la cadera atrás hasta rozar el banco, sin sentarte.','Sube empujando con el talón de delante.']],
 ];
 document.getElementById('g').innerHTML=E.map((e,i)=>`<article class="ex"><video src="v/e${i+1}.mp4" poster="v/e${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]==='dos'?'A dos piernas · 3 × 12–15':'A una pierna · 3 × 10–12 por lado'}</span></div><div class="zona" title="Zona que trabaja"><img src="v/z${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
+const S=[
+['Patada en diagonal','3 × 12 por pierna',['A cuatro apoyos: manos bajo los hombros y rodillas bajo la cadera.','Lleva la pierna estirada hacia atrás y un poco hacia fuera, en diagonal.','Sube hasta la altura de la cadera sin girar el tronco y baja controlando.']],
+['Elevación de cadera de rodillas','3 × 12',['De rodillas, sentada sobre los talones y con las manos juntas en el pecho.','Empuja la cadera hacia delante hasta quedar erguida, apretando el glúteo.','Vuelve a sentarte despacio, con la espalda recta.']],
+['Patada atrás con la pierna recta','3 × 12 por pierna',['A cuatro apoyos, con el abdomen firme y la espalda neutra.','Estira la pierna del todo y súbela recta hacia atrás.','La extensión completa es la clave: no arquees la zona lumbar para subir más.']],
+['Patada atrás sobre los antebrazos','3 × 12 por pierna',['Apoya los antebrazos en la esterilla, con los codos bajo los hombros.','Sube la pierna estirada hacia atrás y arriba.','Al bajar el pecho, el glúteo trabaja en más recorrido: baja lento.']],
+];
+document.getElementById('s').innerHTML=S.map((e,i)=>`<article class="ex w"><video src="v/s${i+1}.mp4" poster="v/s${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]}</span></div><div class="zona" title="Zona que trabaja"><img src="v/sz${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
 const A=a=>'https://www.amazon.es/dp/'+a+'?tag=ursulafit-21';
 const K=[
-['Conjunto sin costuras (top + leggings)','El que llevo en el vídeo · 4,3★',A('B0BLS672M6')],
+['Top deportivo gris','El que llevo en la rutina de suelo',A('B0HHYWSB5W')],
+['Shorts deportivos (pack de varios colores)','El granate de la rutina de suelo',A('B09YYVBT3B')],
+['Zapatillas ASICS','Las de la rutina de suelo',A('B0BZDSBRHG')],
+['Calcetines PUMA','Los de la rutina de suelo',A('B0CVB76RRQ')],
+['Conjunto sin costuras (top + leggings)','El de la rutina con banco · 4,3★',A('B0BLS672M6')],
 ['Esterilla antideslizante 8 mm','Para las rodillas y los puentes · 4,4★',A('B01N67BRCF')],
 ['Bandas elásticas de tela para glúteo','Para calentar antes de empezar · 4,6★',A('B0GVJF14R5')],
 ];
