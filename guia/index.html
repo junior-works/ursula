@@ -106,4 +106,4 @@ const C2=[
 ['Rosa + gris + verde oliva',['#f4c6d3','#8a8d91','#7c8b4a'],['c4a','c4b','c4c','c4d','c4e','c4f','c4g']],
 ];
 document.getElementById('g2').innerHTML=C2.map((c,i)=>`<article class="combo"><img loading="lazy" src="img/r${i+1}.jpg" alt="${c[0]}"><div class="body"><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${c[0]}<span class="dots">${c[1].map(x=>`<i style="background:${x}"></i>`).join('')}</span></h2>${c[2].map(k=>{const p=P2[k];return `<div class="p"><div>${p[0]}${p[1]?`<small>${p[1]}</small>`:''}</div><a class="btn" href="${p[2]}" target="_blank" rel="sponsored noopener">Ver</a></div>`}).join('')}</div></article>`).join('');
-</script></body></html>
+</script><script src="/m.js" defer></script></body></html>
