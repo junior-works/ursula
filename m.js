@@ -7,9 +7,8 @@
     if(localStorage.getItem('nomedir')==='1') return;
   }catch(e){}
   if(navigator.webdriver) return;
-  var U='';  /* destino de los eventos: pendiente (el Supabase anterior de Úrsula ya no existe) */
-  var K='';
-  if(!U) return;
+  var U='https://wailefezkkyhxnlcrlft.supabase.co/rest/v1/web_eventos';  /* proyecto Supabase "ursula", tabla web_eventos */
+  var K='sb_publishable_781896Ao3Whp-Hr2OOTNnw_Ou51Jt0F';  /* clave publicable (pública) */
   var pag=(location.pathname.replace(/index\.html$/,'')||'/').slice(0,60);
   var org='';
   try{ org=document.referrer?new URL(document.referrer).hostname.slice(0,80):''; }catch(e){}
