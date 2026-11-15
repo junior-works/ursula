@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rutina de glúteo · Úrsula Roig</title>
-<meta name="description" content="Rutinas de glúteo: 4 ejercicios en el suelo sin material y 8 con banco y mancuerna, con series, repeticiones y técnica.">
+<title>Mis rutinas: abdomen y glúteo · Úrsula Roig</title>
+<meta name="description" content="Mis rutinas: abdomen en casa (4 ejercicios), glúteo en el suelo (4) y glúteo con banco y mancuerna (8), con series, repeticiones y técnica.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--line:#e6d9c8;--tint:#f1e5d8;--chip:#2a221d}
@@ -16,7 +16,7 @@ h1 em{color:var(--sea)}h2{font-family:"Playfair Display",Georgia,serif;font-weig
 .plan div{background:var(--tint);border-radius:14px;padding:12px 14px;font-size:14px}.plan b{display:block;font-size:16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:20px}
 .ex{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.ex.w video{aspect-ratio:16/9}.sec{margin-top:30px}.new{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--sea);color:#fff;margin-bottom:6px}
+.ex.w video{aspect-ratio:16/9}.ex.a video{aspect-ratio:3/2}.sec{margin-top:30px}.new{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--sea);color:#fff;margin-bottom:6px}
 .ex video{width:100%;aspect-ratio:720/1264;object-fit:cover;display:block;background:#000}
 .body{padding:14px 16px 16px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .num{color:var(--sea);font-size:13px;font-weight:600}.zona{flex:none;background:var(--chip);border-radius:12px;padding:6px}.zona img{height:46px;display:block}
@@ -29,9 +29,18 @@ h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:24px;m
 .legal{color:var(--muted);font-size:12px;margin-top:28px;max-width:720px}
 </style></head><body><div class="wrap">
 <a class="back" href="/">← Volver</a>
-<h1>Rutina de <em>glúteo</em> 🍑</h1>
-<p class="lead">Dos rutinas para trabajar el glúteo desde todos los ángulos: una en el suelo sin material y otra con banco y mancuerna. Guárdalas para tu próximo leg day 💪</p>
-<div class="sec"><span class="new">Nuevo</span><h3 style="margin:0">Glúteo en el suelo · 4 ejercicios</h3>
+<h1>Mis <em>rutinas</em> 💪</h1>
+<p class="lead">Abdomen en casa, glúteo en el suelo y glúteo con banco y mancuerna. Cada ejercicio con su vídeo, las series y la técnica. Guárdalas para tu próximo entreno 💪</p>
+<div class="sec"><span class="new">Nuevo</span><h3 style="margin:0">Abdomen en casa · 4 ejercicios</h3>
+<p class="lead">Solo necesitas una esterilla. Los mismos 4 ejercicios del reel, cada uno para una zona del abdomen.</p></div>
+<div class="grid" id="ab"></div>
+<div class="plan">
+<div><b>Series</b>3 × 12 en cada ejercicio (por lado en los que alternan)</div>
+<div><b>Descanso</b>60 s entre series</div>
+<div><b>Respiración</b>suelta el aire al subir y contrae el abdomen; baja controlando</div>
+<div><b>Para subir nivel</b>no apoyes los pies entre repeticiones o añade una cuarta serie</div>
+</div>
+<div class="sec"><h3 style="margin:0">Glúteo en el suelo · 4 ejercicios</h3>
 <p class="lead">Solo necesitas una esterilla. Los mismos 4 ejercicios del reel, con la técnica de cada uno.</p></div>
 <div class="grid" id="s"></div>
 <div class="plan">
@@ -72,14 +81,23 @@ const S=[
 ['Patada atrás sobre los antebrazos','3 × 12 por pierna',['Apoya los antebrazos en la esterilla, con los codos bajo los hombros.','Sube la pierna estirada hacia atrás y arriba.','Al bajar el pecho, el glúteo trabaja en más recorrido: baja lento.']],
 ];
 document.getElementById('s').innerHTML=S.map((e,i)=>`<article class="ex w"><video src="v/s${i+1}.mp4" poster="v/s${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]}</span></div><div class="zona" title="Zona que trabaja"><img src="v/sz${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
+const AB=[
+['Encogimiento de rodillas sentada','3 × 12 · recto abdominal',['Sentada, apoyada en las manos por detrás de la cadera y con las piernas estiradas sin tocar el suelo.','Lleva las rodillas al pecho contrayendo el abdomen.','Vuelve a estirar las piernas del todo sin apoyar los talones.']],
+['Abdominal con rodilla al pecho','3 × 12 alternando · oblicuos',['Tumbada boca arriba, con los brazos estirados por encima de la cabeza.','Sube el tronco llevando los brazos al frente y recoge una rodilla al pecho.','Baja despacio hasta tumbarte y alterna la pierna.']],
+['Escalador cruzado','3 × 12 por lado · abdomen superior',['En plancha alta: manos bajo los hombros y el cuerpo en línea recta.','Lleva una rodilla hacia el codo contrario y vuelve a estirar la pierna atrás.','Alterna sin subir la cadera y con las manos firmes en la esterilla.']],
+['Toque de pie cruzado en estrella','3 × 12 por lado · abdomen inferior',['Tumbada en estrella, con brazos y piernas estirados.','Sube una pierna recta y la mano contraria hasta tocarte el pie.','Baja controlando a la estrella y alterna el lado.']],
+];
+document.getElementById('ab').innerHTML=AB.map((e,i)=>`<article class="ex a"><video src="v/a${i+1}.mp4" poster="v/a${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]}</span></div><div class="zona" title="Zona que trabaja"><img src="v/az${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
 const A=a=>'https://www.amazon.es/dp/'+a+'?tag=ursulafit-21';
 const K=[
+['Leggings CRZ YOGA con cintura cruzada (verde oliva)','Los de la rutina de abdomen · 4,6★',A('B0BFW8VD5W')],
+['Top CRZ YOGA de cuello cuadrado (verde oliva)','El de la rutina de abdomen · 4,6★',A('B0BRXRTVP8')],
 ['Top deportivo gris','El que llevo en la rutina de suelo',A('B0HHYWSB5W')],
 ['Shorts deportivos (pack de varios colores)','El granate de la rutina de suelo',A('B09YYVBT3B')],
 ['Zapatillas ASICS','Las de la rutina de suelo',A('B0BZDSBRHG')],
 ['Calcetines PUMA','Los de la rutina de suelo',A('B0CVB76RRQ')],
 ['Conjunto sin costuras (top + leggings)','El de la rutina con banco · 4,3★',A('B0BLS672M6')],
-['Esterilla antideslizante 8 mm','Para las rodillas y los puentes · 4,4★',A('B01N67BRCF')],
+['Esterilla antideslizante 8 mm','Para el abdomen, las rodillas y los puentes · 4,4★',A('B01N67BRCF')],
 ['Bandas elásticas de tela para glúteo','Para calentar antes de empezar · 4,6★',A('B0GVJF14R5')],
 ];
 document.getElementById('kit').innerHTML=K.map(k=>`<div class="p"><div>${k[0]}<small>${k[1]}</small></div><a class="btn" href="${k[2]}" target="_blank" rel="sponsored noopener">Ver</a></div>`).join('');
