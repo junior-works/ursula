@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mis rutinas: abdomen y glúteo · Úrsula Roig</title>
-<meta name="description" content="Mis rutinas: abdomen en casa (4 ejercicios), glúteo en el suelo (4) y glúteo con banco y mancuerna (8), con series, repeticiones y técnica.">
+<title>Mis rutinas: movilidad, abdomen y glúteo · Úrsula Roig</title>
+<meta name="description" content="Mis rutinas: movilidad de cadera (5 posturas), abdomen en casa (4 ejercicios), glúteo en el suelo (4) y glúteo con banco y mancuerna (8), con series, repeticiones y técnica.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f1e9;--card:#fffdf9;--ink:#342822;--muted:#6f5d52;--sea:#b0785c;--line:#e6d9c8;--tint:#f1e5d8;--chip:#2a221d}
@@ -30,8 +30,17 @@ h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:24px;m
 </style></head><body><div class="wrap">
 <a class="back" href="/">← Volver</a>
 <h1>Mis <em>rutinas</em> 💪</h1>
-<p class="lead">Abdomen en casa, glúteo en el suelo y glúteo con banco y mancuerna. Cada ejercicio con su vídeo, las series y la técnica. Guárdalas para tu próximo entreno 💪</p>
-<div class="sec"><span class="new">Nuevo</span><h3 style="margin:0">Abdomen en casa · 4 ejercicios</h3>
+<p class="lead">Movilidad de cadera, abdomen en casa, glúteo en el suelo y glúteo con banco y mancuerna. Cada ejercicio con su vídeo, las series y la técnica. Guárdalas para tu próximo entreno 💪</p>
+<div class="sec"><span class="new">Nuevo</span><h3 style="margin:0">Movilidad de cadera · 5 posturas</h3>
+<p class="lead">Para soltar la cadera cuando la notas rígida. Las mismas 5 posturas del reel, en mi terraza y con una esterilla.</p></div>
+<div class="grid" id="mc"></div>
+<div class="plan">
+<div><b>Tiempo</b>30–45 s en cada postura (por lado en las que tienen dos lados)</div>
+<div><b>Vueltas</b>2 rondas seguidas, sin prisa</div>
+<div><b>Respiración</b>lenta por la nariz; al soltar el aire, déjate caer un poco más</div>
+<div><b>Importante</b>estira hasta notar tensión, nunca dolor</div>
+</div>
+<div class="sec"><h3 style="margin:0">Abdomen en casa · 4 ejercicios</h3>
 <p class="lead">Solo necesitas una esterilla. Los mismos 4 ejercicios del reel, cada uno para una zona del abdomen.</p></div>
 <div class="grid" id="ab"></div>
 <div class="plan">
@@ -81,6 +90,14 @@ const S=[
 ['Patada atrás sobre los antebrazos','3 × 12 por pierna',['Apoya los antebrazos en la esterilla, con los codos bajo los hombros.','Sube la pierna estirada hacia atrás y arriba.','Al bajar el pecho, el glúteo trabaja en más recorrido: baja lento.']],
 ];
 document.getElementById('s').innerHTML=S.map((e,i)=>`<article class="ex w"><video src="v/s${i+1}.mp4" poster="v/s${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]}</span></div><div class="zona" title="Zona que trabaja"><img src="v/sz${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
+const MC=[
+['Paloma','30–45 s por lado',['Rodilla de delante flexionada en la esterilla y la pierna de atrás estirada, con el empeine apoyado.','Manos en la esterilla, brazos rectos y el pecho abierto.','Deja que la cadera baje poco a poco mientras respiras.']],
+['Paloma inclinada','30–45 s por lado',['Desde la paloma, lleva el pecho hacia delante sobre la pierna flexionada.','Apoya los antebrazos y relaja la cabeza.','Notarás el estiramiento en el glúteo de la pierna de delante.']],
+['Zancada baja','30–45 s por lado',['Pie de delante apoyado y la rodilla de atrás cerca del suelo, con la pierna estirada.','Manos a los lados del pie de delante.','Balancea la cadera adelante y atrás, suave, para abrir la parte delantera.']],
+['Sentadilla profunda','30–45 s',['Pies un poco más abiertos que la cadera y talones en el suelo.','Baja la cadera entre los talones con las palmas juntas en el pecho.','Apoya los codos por dentro de las rodillas y empújalas hacia fuera.']],
+['Mariposa','30–45 s',['Sentada, junta las plantas de los pies y deja caer las rodillas hacia los lados.','Coge los pies con las manos y estira la espalda.','Inclínate un poco hacia delante sin redondear la espalda.']],
+];
+document.getElementById('mc').innerHTML=MC.map((e,i)=>`<article class="ex"><video src="v/m${i+1}.mp4" poster="v/m${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]}</span></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
 const AB=[
 ['Encogimiento de rodillas sentada','3 × 12 · recto abdominal',['Sentada, apoyada en las manos por detrás de la cadera y con las piernas estiradas sin tocar el suelo.','Lleva las rodillas al pecho contrayendo el abdomen.','Vuelve a estirar las piernas del todo sin apoyar los talones.']],
 ['Abdominal con rodilla al pecho','3 × 12 alternando · oblicuos',['Tumbada boca arriba, con los brazos estirados por encima de la cabeza.','Sube el tronco llevando los brazos al frente y recoge una rodilla al pecho.','Baja despacio hasta tumbarte y alterna la pierna.']],
@@ -90,6 +107,8 @@ const AB=[
 document.getElementById('ab').innerHTML=AB.map((e,i)=>`<article class="ex a"><video src="v/a${i+1}.mp4" poster="v/a${i+1}.jpg" muted loop playsinline autoplay preload="none"></video><div class="body"><div class="top"><div><div class="num">${String(i+1).padStart(2,'0')}</div><h2>${e[0]}</h2><span class="tag">${e[1]}</span></div><div class="zona" title="Zona que trabaja"><img src="v/az${i+1}.png" alt="Zona que trabaja"></div></div><ul>${e[2].map(t=>`<li>${t}</li>`).join('')}</ul></div></article>`).join('');
 const A=a=>'https://www.amazon.es/dp/'+a+'?tag=ursulafit-21';
 const K=[
+['Leggings Memoryee sin costuras push up (gris claro)','Los de la rutina de movilidad de cadera · 4,2★',A('B09Y1KWDH2')],
+['Top deportivo Sykooria de tirantes cruzados (blanco)','El de la rutina de movilidad de cadera · 4,5★',A('B08P17B84V')],
 ['Leggings CRZ YOGA con cintura cruzada (verde oliva)','Los de la rutina de abdomen · 4,6★',A('B0BFW8VD5W')],
 ['Top CRZ YOGA de cuello cuadrado (verde oliva)','El de la rutina de abdomen · 4,6★',A('B0BRXRTVP8')],
 ['Top deportivo gris','El que llevo en la rutina de suelo',A('B0HHYWSB5W')],
